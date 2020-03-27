@@ -27,9 +27,11 @@ import java.util.Map;
 
 
 /**
+ *
+ * 利用hutool和easypoi工具包装的自定义excel操作工具
+ *
  * @author 王俊锋
- * @date 2020/03/05
- * @description 利用hutool和easypoi工具包装的自定义excel操作工具
+ * @version  2020/03/05 v1.0
  */
 public class MyOfficeUtil {
 

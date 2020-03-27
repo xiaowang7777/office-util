@@ -3,10 +3,32 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	<name>office-util</name>
 	<groupId>com.wjf</groupId>
-	<artifactId>officeUtil</artifactId>
+	<artifactId>office-util</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<description>office-util</description>
+
+	<url>http://www.github.com/1137095129/office-util</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License,Version 2.0</name>
+			<url>http://www.apache.org/license/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>wangjunfeng</name>
+			<email>wang1137095129@foxmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:1137095129/office-util.git</connection>
+		<developerConnection>scm:git:git@github.com:1137095129/office-util.git</developerConnection>
+		<url>git@github.com:1137095129/office-util.git</url>
+	</scm>
 
 	<dependencies>
 		<dependency>
@@ -99,5 +121,69 @@
 		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>jdk</id>
+			<build>
+				<plugins>
+					<!-- 指定jdk版本 -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.1</version>
+						<configuration>
+							<!-- 源码的编译器版本 -->
+							<source>1.8</source>
+							<!-- class的编译器版本 -->
+							<target>1.8</target>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.2.0</version>
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>oss</id>
+					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+				</snapshotRepository>
+				<repository>
+					<id>oss</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+		</profile>
+	</profiles>
 
 </project>

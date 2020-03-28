@@ -36,9 +36,11 @@ import java.util.Map;
 public class MyOfficeUtil {
 
 	/**
-	 * @param path        文件所在路径
+	 *
+	 * @param path 文件所在路径
 	 * @param headerAlias K-V值对应reader.addHeaderAlias()方法的两个参数
-	 * @param clazz       指定类型的class
+	 * @param clazz 指定类型的class
+	 * @param <T> 指定类型的clazz
 	 * @return 生成指定类型的list
 	 */
 	public static <T> List<T> getList(@NotNull String path, @NotNull Map<String, String> headerAlias, @NotNull Class<T> clazz) {
@@ -49,9 +51,10 @@ public class MyOfficeUtil {
 
 	/**
 	 * @param templateFilePath 模板文件路径
-	 * @param newFilePath      新生成的文件保存路径
-	 * @param newFileName      新生成文件名称
-	 * @param map              生成文件数据
+	 * @param newFilePath 新生成的文件保存路径
+	 * @param newFileName 新生成文件名称
+	 * @param map           生成文件数据
+	 * @return 返回了路径对象（包含了真实路径和相对路径）
 	 */
 	public static FilePath getWordFile(@NotNull String templateFilePath, @NotNull String newFilePath, @NotNull String newFileName, @NotNull Map<String, Object> map) {
 		File file = new File(templateFilePath);
@@ -79,9 +82,10 @@ public class MyOfficeUtil {
 
 	/**
 	 * @param templateFilePath 模板文件路径
-	 * @param newFileName      新生成的文件名
-	 * @param map              生成的文件数据
-	 * @param response         将生成的文件直接写入HttpServletResponse中
+	 * @param newFilePath 新生成的文件路径
+	 * @param newFileName 新生成的文件名
+	 * @param map 生成的文件数据
+	 * @param response 将生成的文件直接写入HttpServletResponse中
 	 */
 	public static void getWordFile(@NotNull String templateFilePath, @NotNull String newFilePath, @NotNull String newFileName, @NotNull Map<String, Object> map, HttpServletResponse response) {
 		File file = new File(templateFilePath);
@@ -109,11 +113,11 @@ public class MyOfficeUtil {
 
 	/**
 	 * 生成excel文件并返回其路径
-	 *
 	 * @param templateFilePath 模版文件路径
-	 * @param newFilePath      生成的新文件路径
-	 * @param newFileName      生成的新文件名
-	 * @param map              生成的文件信息
+	 * @param newFilePath 生成的新文件路径
+	 * @param newFileName 生成的新文件名
+	 * @param map 生成的文件信息
+	 * @return 返回了文件路径对象
 	 * @throws IOException 文件及IO流异常
 	 */
 	public static FilePath getExcelFile(@NotNull String templateFilePath, @NotNull String newFilePath, @NotNull String newFileName, @NotNull Map<String, Object> map) throws IOException {

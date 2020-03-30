@@ -1,13 +1,13 @@
-package com.wjf.util;
+package com.github.util;
 
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.TemplateExportParams;
 import cn.afterturn.easypoi.word.WordExportUtil;
 import cn.hutool.poi.excel.ExcelReader;
 import cn.hutool.poi.excel.ExcelUtil;
-import com.wjf.entity.FilePath;
-import com.wjf.entity.TableMap;
-import com.wjf.entity.WordTable;
+import com.github.entity.FilePath;
+import com.github.entity.TableMap;
+import com.github.entity.WordTable;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xwpf.usermodel.*;
 import org.openxmlformats.schemas.wordprocessingml.x2006.main.*;

@@ -4,9 +4,9 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<name>office-util</name>
-	<groupId>com.wjf</groupId>
+	<groupId>com.github.1137095129</groupId>
 	<artifactId>office-util</artifactId>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 	<description>office-util</description>
 
 	<url>http://www.github.com/1137095129/office-util</url>
@@ -134,7 +134,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.1</version>
+						<version>3.8.1</version>
 						<configuration>
 							<!-- 源码的编译器版本 -->
 							<source>1.8</source>
@@ -180,7 +180,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.10.4</version>
+						<version>3.2.0</version>
 						<executions>
 							<execution>
 								<phase>package</phase>
@@ -203,7 +203,7 @@
 					<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
 				</snapshotRepository>
 				<repository>
-					<id>releases</id>
+					<id>snapshots</id>
 					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 				</repository>
 			</distributionManagement>

@@ -1,4 +1,4 @@
-package com.wjf.entity;
+package com.github.entity;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
